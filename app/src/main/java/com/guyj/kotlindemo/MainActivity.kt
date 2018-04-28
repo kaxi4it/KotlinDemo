@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import com.guyj.kotlindemo.expand.setShiftMode
 import com.guyj.kotlindemo.ui.quotation.QuotationMainFragment
+import com.guyj.kotlindemo.ui.setting.SettingFragment
+import com.guyj.kotlindemo.ui.transaction.TransactionFragment
 import com.guyj.kotlindemo.ui.wallet.WalletMainFragment
 import com.squareup.leakcanary.LeakCanary
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,7 +40,9 @@ class MainActivity : AppCompatActivity() {
 
     private val quotationMainFragment = QuotationMainFragment.newInstance("","")
     private val walletMainFragment = WalletMainFragment.newInstance("","")
-    private val fragments = listOf(quotationMainFragment, walletMainFragment)
+    private val transactionFragment = TransactionFragment.newInstance("","")
+    private val settingFragment = SettingFragment.newInstance("","")
+    private val fragments = listOf(quotationMainFragment, walletMainFragment,transactionFragment,settingFragment)
     private var lastMenuItemId :Int?=null
     private var lastFragment :Fragment?=null
 
