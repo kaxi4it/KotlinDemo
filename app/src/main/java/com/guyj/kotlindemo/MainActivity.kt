@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.guyj.kotlindemo.expand.setShiftMode
 import com.guyj.kotlindemo.ui.quotation.QuotationMainFragment
 import com.guyj.kotlindemo.ui.setting.SettingFragment
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun itemChange(menuItemId:Int?,position:Int=0){
         if (lastMenuItemId != menuItemId) {
-            var transaction :FragmentTransaction=supportFragmentManager.beginTransaction()
+            val transaction :FragmentTransaction=supportFragmentManager.beginTransaction()
             if (fragments[position].isAdded) {
                 transaction.hide(lastFragment).show(fragments[position]).commit()
             } else {
