@@ -5,7 +5,6 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.guyj.kotlindemo.expand.setShiftMode
 import com.guyj.kotlindemo.ui.quotation.QuotationMainFragment
 import com.guyj.kotlindemo.ui.setting.SettingFragment
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_transaction -> {
-                itemChange(item.itemId,0)
+                itemChange(item.itemId,2)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_setting -> {
-                itemChange(item.itemId,1)
+                itemChange(item.itemId,3)
                 return@OnNavigationItemSelectedListener true
             }
         }
