@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.guyj.kotlindemo.R
+import com.guyj.kotlindemo.expand.setUpDownColor
+import kotlinx.android.synthetic.main.fragment_setting.*
 
 
 /**
@@ -33,6 +35,11 @@ class SettingFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_setting, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        tv.setUpDownColor()
     }
 
     companion object {

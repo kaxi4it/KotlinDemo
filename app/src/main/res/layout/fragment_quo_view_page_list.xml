@@ -5,11 +5,14 @@
     tools:context="com.guyj.kotlindemo.ui.quotation.QuoViewPageListFragment">
 
     <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:listitem="@layout/item_quo_vp_list"
             />
     </android.support.v4.widget.SwipeRefreshLayout>
 

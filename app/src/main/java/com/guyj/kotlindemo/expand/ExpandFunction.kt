@@ -2,10 +2,12 @@ package com.guyj.kotlindemo.expand
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.widget.Toast
 import android.support.design.internal.BottomNavigationItemView
 import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
+import android.widget.TextView
+import android.widget.Toast
+import com.guyj.kotlindemo.R
 
 
 /**
@@ -19,8 +21,8 @@ fun Context.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
 }
 
 @SuppressLint("RestrictedApi")
-fun BottomNavigationView.setShiftMode(defaultShiftingMode: Boolean = false) {
-    if (defaultShiftingMode)return
+fun BottomNavigationView.setShiftModeDefaultFalse(defaultShiftingMode: Boolean = false) {
+    if (defaultShiftingMode) return
     val menuView = this.getChildAt(0) as BottomNavigationMenuView
     try {
         val shiftingMode = menuView.javaClass.getDeclaredField("mShiftingMode")
@@ -36,5 +38,27 @@ fun BottomNavigationView.setShiftMode(defaultShiftingMode: Boolean = false) {
         e.printStackTrace()
     } catch (e: IllegalAccessException) {
         e.printStackTrace()
+    }
+}
+
+fun TextView.setUpDownColor() {
+    try {
+        val textNum = this.text.toString().toDouble()
+            when {
+                textNum > 0 -> {
+                    this.append("%↑")
+                    this.background = resources.getDrawable(R.drawable.shape_tv_cornor_green)
+                }
+                textNum == 0.0 -> {
+                    this.append("%")
+                    this.background = resources.getDrawable(R.drawable.shape_tv_cornor_grey)
+                }
+                else -> {
+                    this.append("%↓")
+                    this.background = resources.getDrawable(R.drawable.shape_tv_cornor_red)
+                }
+            }
+    } catch (e: NumberFormatException) {
+        return
     }
 }

@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.guyj.kotlindemo.R
+import com.guyj.kotlindemo.expand.setUpDownColor
+import kotlinx.android.synthetic.main.fragment_wallet_main.*
 
 
 /**
@@ -35,6 +37,11 @@ class WalletMainFragment : Fragment() {
         // Inflate the layout for this fragment
         Log.e("Wallet","onCreateView")
         return inflater!!.inflate(R.layout.fragment_wallet_main, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        tv.setUpDownColor()
     }
 
     override fun onHiddenChanged(hidden: Boolean) {

@@ -33,5 +33,6 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    implementation 'com.github.kaxi4it:EasyRecyclerViewAdapter:1.11'
 
 }

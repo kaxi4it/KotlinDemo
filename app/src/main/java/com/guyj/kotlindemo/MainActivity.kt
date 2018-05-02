@@ -5,7 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
-import com.guyj.kotlindemo.expand.setShiftMode
+import com.guyj.kotlindemo.expand.setShiftModeDefaultFalse
 import com.guyj.kotlindemo.ui.quotation.QuotationMainFragment
 import com.guyj.kotlindemo.ui.setting.SettingFragment
 import com.guyj.kotlindemo.ui.transaction.TransactionFragment
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         LeakCanary.install(application)
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation.setShiftMode()
+        navigation.setShiftModeDefaultFalse()
         supportFragmentManager.beginTransaction().add(R.id.main_content, fragments[0]).commit()
         lastFragment = fragments[0]
         lastMenuItemId = R.id.navigation_quotation

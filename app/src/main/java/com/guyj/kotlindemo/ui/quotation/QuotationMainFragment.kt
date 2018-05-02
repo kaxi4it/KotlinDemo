@@ -4,12 +4,14 @@ package com.guyj.kotlindemo.ui.quotation
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import com.guyj.kotlindemo.R
+import com.guyj.kotlindemo.adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.fragment_quotation_main.*
 
 
@@ -42,17 +44,35 @@ class QuotationMainFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.e("QuotationMainFragment","onViewCreated")
+
         tabLayout.addTab(tabLayout.newTab().setText("CNY市场"))
         tabLayout.addTab(tabLayout.newTab().setText("BTS市场"))
         tabLayout.addTab(tabLayout.newTab().setText("USD市场"))
         tabLayout.addTab(tabLayout.newTab().setText("GDEX.BTC市场"))
         tabLayout.addTab(tabLayout.newTab().setText("SEER市场"))
+        val fragments = ArrayList<Fragment>()
+        val titles = ArrayList<String>()
+        fragments.add(QuoViewPageListFragment.newInstance("",""))
+        fragments.add(QuoViewPageListFragment.newInstance("",""))
+        fragments.add(QuoViewPageListFragment.newInstance("",""))
+        fragments.add(QuoViewPageListFragment.newInstance("",""))
+        fragments.add(QuoViewPageListFragment.newInstance("",""))
+        titles.add("CNY市场")
+        titles.add("BTS市场")
+        titles.add("USD市场")
+        titles.add("GDEX.BTC市场")
+        titles.add("SEER市场")
+        val adapter=ViewPagerAdapter(activity.supportFragmentManager)
+        adapter.setFragments(fragments)
+        adapter.setPageTitle(titles)
+        viewPager.adapter=adapter
+
+        tabLayout.setupWithViewPager(viewPager)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.e("QuotationMainFragment","onActivityCreated")
-        var fragments = ArrayList<Fragment>()
     }
 
     override fun onDestroyView() {
