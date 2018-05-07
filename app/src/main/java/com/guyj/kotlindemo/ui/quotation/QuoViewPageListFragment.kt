@@ -58,9 +58,9 @@ class QuoViewPageListFragment : Fragment() {
         recycler.isLayoutFrozen=true
         val adapter = object : AutoLoadMoreAdapter<String>(context, R.layout.item_quo_vp_list, mDatas) {
             override fun convert(holder: ViewHolder, s: String, position: Int) {
-                val tv_percent=holder.getView<TextView>(R.id.tv_percent)
-                tv_percent.text= mDatas[position]
-                tv_percent.setUpDownColor()
+                val tvPercent=holder.getView<TextView>(R.id.tv_percent)
+                tvPercent.text= mDatas[position]
+                tvPercent.setUpDownColor()
             }
 
             override fun loadMore() {
