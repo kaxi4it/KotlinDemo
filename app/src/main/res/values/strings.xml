@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">KotlinDemo</string>
+    <string name="app_name">鼓鼓钱包kt版</string>
     <string name="title_quotation">行情</string>
     <string name="title_wallet">钱包</string>
     <string name="title_transaction">场外交易</string>
     <string name="title_setting">设置</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

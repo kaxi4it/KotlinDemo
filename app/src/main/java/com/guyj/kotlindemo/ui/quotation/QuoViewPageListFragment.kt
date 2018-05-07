@@ -45,11 +45,11 @@ class QuoViewPageListFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mDatas=ArrayList<String>()
-        mDatas.add("12.1")
-        mDatas.add("-12.1")
-        mDatas.add("12.1")
-        mDatas.add("-12.1")
         mDatas.add("0")
+        mDatas.add("0")
+        mDatas.add("12.1")
+        mDatas.add("-12.1")
+        mDatas.add("112.1")
         mDatas.add("112.1")
         mDatas.add("-112.1")
         mDatas.add("112.1")
@@ -64,30 +64,31 @@ class QuoViewPageListFragment : Fragment() {
             }
 
             override fun loadMore() {
-                mDatas.add("33.1")
-                mDatas.add("-33.1")
+                mDatas.add("0")
+                mDatas.add("0")
                 mDatas.add("3.1")
                 mDatas.add("-312.1")
-                mDatas.add("0")
+                mDatas.add("-312.1")
                 mDatas.add("32.1")
                 mDatas.add("-32.1")
                 mDatas.add("32.1")
                 mDatas.add("-32.1")
+                notifyDataSetChanged()
             }
         }
-        adapter.setAdvanceCount(0)
         recycler.adapter=adapter
         swipe.setOnRefreshListener {
             mDatas.clear()
-            mDatas.add("22.1")
-            mDatas.add("-212.1")
+            mDatas.add("0")
+            mDatas.add("0")
             mDatas.add("212.1")
             mDatas.add("-212.1")
-            mDatas.add("0")
+            mDatas.add("-212.1")
             mDatas.add("212.1")
             mDatas.add("-2112.1")
             mDatas.add("2112.1")
             mDatas.add("-2112.1")
+            adapter.notifyDataSetChanged()
             swipe.isRefreshing=false
         }
     }
